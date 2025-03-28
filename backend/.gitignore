@@ -1,0 +1,18 @@
+# Ignore the logs folder
+/logs/
+
+# Ignore the framework folder
+/framework/
+
+# Ignore testbox folder
+/testbox/
+
+# Ignore any file with a .local extension
+*.local
+
+# Ignore IDE files (e.g., for Visual Studio Code, IntelliJ, etc.)
+.vscode/
+.idea/
+
+# Ignore ColdFusion server temporary files (optional)
+/cfusion/
