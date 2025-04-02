@@ -1,0 +1,18 @@
+name: ${DOCKER_CONTAINER_NAME}
+services:
+  # MariaDB Database
+  mariadb:
+    image: mariadb:10.3.9
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - ${DB_PORT}:3306
+    volumes:
+      - ./.workbench/db:/var/lib/mysql
+      - ./.workbench/db_local.sql:/docker-entrypoint-initdb.d/db_local.sql
+    command: [
+      '--character_set_server=utf8mb4',
+      '--collation_server=${DB_COLLATION}',
+      '--lower_case_table_names=1',
+      '--wait_timeout=31536000'
+    ]

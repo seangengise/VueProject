@@ -1,0 +1,35 @@
+{
+    "name":"DemoApp",
+    "app":{
+        "serverHomeDirectory":".engine/coldfusion",
+        "cfengine":"adobe@2021"
+    },
+    "cfconfig":{
+        "file":".cfconfig.json"
+    },
+    "web":{
+        "host":"local-DemoAppt",
+        "hostAlias":[
+            "local-DemoApp-admin"
+        ],
+        "webroot":"www",
+        "aliases":{
+            "/data":"wwwdata",
+            "/CFFileServlet":".engine/coldfusion/WEB-INF/cfusion/tmpCache/CFFileServlet"
+        },
+        "http":{
+            "port":"80"
+        },
+        "directoryBrowsing":true
+    },
+    "jvm":{
+        "heapSize":1024
+    },
+    "openBrowser":true,
+    "openBrowserURL":"http://local-DemoApp-admin",
+    "debug":true,
+    "debugh":true,
+    "scripts":{
+        "onServerInstall":"cfpm install caching,debugger,orm"
+    }
+}

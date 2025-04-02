@@ -16,3 +16,7 @@
 
 # Ignore ColdFusion server temporary files (optional)
 /cfusion/
+
+# Ignore .engine and workbench
+/.engine/
+/.workbench/

@@ -1,16 +1,19 @@
 <script setup>
-import HelloWorld from "./components/HelloWorld.vue";
-import Home from "./views/Home.vue";
-import About from "./views/About.vue";
-import Navigation from "./components/Navigation.vue";
+import Navigation from './components/Navigation.vue';
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div>
-    <Navigation></Navigation>
-  </div>
+  <v-app>
+      <Navigation />
+    <v-main>
+      <router-view v-slot="{ Component }">
+        <v-fade-transition hide-on-leave>
+          <component :is="Component" />
+        </v-fade-transition>
+      </router-view>
+    </v-main>
+  </v-app>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
